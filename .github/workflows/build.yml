@@ -6,6 +6,37 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest coverage
+
+      - name: Run Tests with Coverage
+        run: |
+          coverage run --source=python_template -m pytest tests
+          coverage report
+          coverage xml -i
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage.xml
+          path: coverage.xml
+          
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
