@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Tests with Coverage
         run: |
-          coverage run --source=dependecies -m pytest test
+          coverage run -m pytest test
           coverage report
           coverage xml -i
 
