@@ -1,2 +1,4 @@
 pytest
 coverage
+google-cloud-secret-manager
+google-cloud-storage
