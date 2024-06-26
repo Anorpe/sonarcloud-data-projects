@@ -1,5 +1,4 @@
 
-import spark
 from pyspark.sql.functions import regexp_replace
 from pyspark.sql.functions import lit
 from utils_functions import list_to_string
