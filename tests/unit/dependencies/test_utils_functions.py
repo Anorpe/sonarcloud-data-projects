@@ -11,6 +11,7 @@ class TestDependenciesUtilsFunctions:
 
     def test_dict_to_string_schema(self):
         assert dict_to_string_schema({"name":"STRING"}) == "name STRING"
+        assert dict_to_string_schema({"name":"STRING","last_name":"STRING"}) == "name STRING,last_name STRING"
 
 
 

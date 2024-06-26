@@ -40,6 +40,6 @@ def dict_to_string_schema(dict_schema:dict):
   """
   str_schema = ""
   for column, type in dict_schema.items():
-      str_schema += column + " " + type +" ,"
+      str_schema += column + " " + type +","
   str_schema = str_schema[:-1]
   return str_schema
