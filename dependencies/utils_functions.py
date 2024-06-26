@@ -1,6 +1,6 @@
 
 
-def list_to_string(lista,sep = ""):
+def list_to_string(lista:list, sep:str = ""):
   """
   
   Convierte una lista en un string
@@ -22,9 +22,24 @@ def list_to_string(lista,sep = ""):
   return result
 
 
-def dict_to_string_schema(dict_schema):
-    str_schema = ""
-    for column, type in dict_schema.items():
-        str_schema += column + " " + type +" ,"
-    str_schema = str_schema[:-1]
-    return str_schema
+def dict_to_string_schema(dict_schema:dict):
+  """
+
+  Convierte un diccionario con un esquema de Spark en un
+  esquema en formato string de Spark
+
+  Parametros
+  ----------
+  dict_schema: dict
+    Diccionario con el esquema
+  
+    
+  Retorna
+  -------
+  result: string  
+  """
+  str_schema = ""
+  for column, type in dict_schema.items():
+      str_schema += column + " " + type +" ,"
+  str_schema = str_schema[:-1]
+  return str_schema
