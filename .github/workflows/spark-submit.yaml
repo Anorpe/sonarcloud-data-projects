@@ -35,4 +35,4 @@ jobs:
           spark-version: ${{ matrix.spark }}
           hadoop-version: '3'
 
-      - run: spark-submit app.py data.json
+      - run: spark-submit tests/unit/dependencies/test_spark_functions.py
