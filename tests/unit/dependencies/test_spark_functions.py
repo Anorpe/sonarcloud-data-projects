@@ -1,13 +1,8 @@
 import pytest
 from pyspark.sql import SparkSession
-
-
-spark = SparkSession.builder.appName("spark").getOrCreate()
-
-"""
 from dependencies.spark_functions import columns_to_upper
 
-
+spark = SparkSession.builder.appName("spark").getOrCreate()
 
 
 
@@ -19,4 +14,4 @@ class TestDependenciesSparkFunctions:
         
         data_out = [{"NAME":"jose","AGE":40}]
         df_out = spark.createDataFrame(data_in)
-        assert columns_to_upper(df_in) == df_out"""
+        assert columns_to_upper(df_in) == df_out
