@@ -10,7 +10,14 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
 
-    
+    strategy:
+      matrix:
+        python:
+          - '3.10'
+          - '3.11'
+        spark:
+          - 3.3.2
+          - 3.4.0
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,7 +32,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
-          pip install pytest coverage pyspark
+          pip install pytest coverage
 
       - name: Run Tests with Coverage
         run: |
