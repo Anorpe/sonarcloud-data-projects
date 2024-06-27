@@ -1,11 +1,14 @@
 import pytest
+from pyspark.sql import SparkSession
 
+
+spark = SparkSession.builder.appName("spark").getOrCreate()
 
 """
 from dependencies.spark_functions import columns_to_upper
-from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName("spark").getOrCreate()
+
+
 
 
 class TestDependenciesSparkFunctions:
