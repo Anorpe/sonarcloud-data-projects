@@ -1,9 +1,27 @@
 import pytest
 from pyspark.sql import SparkSession
-from dependencies.spark_functions import columns_to_upper
+#from dependencies.spark_functions import columns_to_upper
 
 spark = SparkSession.builder.appName("spark").getOrCreate()
 
+def columns_to_upper(df):
+  """
+  
+  Tranforma a mayusculas todas las columnas de un Dataframe 
+  
+  Parametros
+  ----------
+  data: Dataframe
+    Dataframe que se va a procesar
+    
+  Retorna
+  -------
+  df: Dataframe
+  """
+  
+  for col in df.columns:
+      df = df.withColumnRenamed(col, col.upper())
+  return df
 
 
 class TestDependenciesSparkFunctions:
