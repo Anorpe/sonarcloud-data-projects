@@ -12,11 +12,9 @@ jobs:
     strategy:
       matrix:
         python:
-          - '3.10'
-          - '3.11'
+          - '3.12'
         spark:
-          - 3.3.2
-          - 3.4.0
+          - 3.5.1
 
     steps:
       - uses: actions/checkout@v3
