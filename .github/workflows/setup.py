@@ -1,1 +1,1 @@
-packages=['dependencies/spark_functions', 'dependencies/utils_functions']
+packages=['dependencies','dependencies/spark_functions', 'dependencies/utils_functions']
