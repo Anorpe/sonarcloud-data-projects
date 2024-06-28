@@ -40,6 +40,12 @@ jobs:
 
       - run: spark-submit tests/unit/dependencies/test_spark_functions.py
 
+      - name: Run Tests with Coverage
+        run: |
+          coverage run --source=execution,dependencies,setup -m pytest tests
+          coverage report
+          coverage xml -i
+
 
   test:
     name: Test
